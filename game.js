@@ -29,3 +29,12 @@ function makeMove(currentButton) {
 		document.querySelector("h1").appendChild(message);
 	}
 }
+
+// Change the marker to alternate the player's turn
+function changeMarker() {
+	if (marker === "X") {
+		marker = "O";
+	} else {
+		marker = "X";
+	}
+}
