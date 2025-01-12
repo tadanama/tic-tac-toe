@@ -1,12 +1,22 @@
+:root {
+	--cell-size: 100px;
+}
+
 /* Remove default margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /* Set the width and height of each button (tic tac toe cell) */
 button {
-    width: 50px;
-    height: 50px;
+	width: var(--cell-size);
+	height: var(--cell-size);
+}
+
+/* Set the grid container to display buttons in a 3X3 grid format */
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, var(--cell-size));
 }
