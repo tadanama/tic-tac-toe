@@ -1,3 +1,6 @@
+// Variable to track the board state
+let board = ["", "", "", "", "", "", "", "", ""];
+
 // First player has the 'X' marker
 let marker = "X";
 
@@ -7,15 +10,20 @@ const buttons = document.querySelectorAll("button");
 // Add click event listeners to all buttons to mark the board
 for (let i = 0; i < buttons.length; i++) {
 	buttons[i].addEventListener("click", function () {
-		makeMove(this);
+		// Pass the current button node and its index
+		makeMove(this, i);
 	});
 }
 
-function makeMove(currentButton) {
+function makeMove(currentButton, currentButtonIndex) {
 	// Check if the tic tac toe cell is empty
 	if (currentButton.textContent === "") {
 		// Mark the board
 		currentButton.textContent = marker;
+
+		// Update the board state
+		board[currentButtonIndex] = marker;
+		console.log(board);
 
 		// Check if the user won
 		// Else change the marker
