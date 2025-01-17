@@ -16,6 +16,14 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 function makeMove(currentButton, currentButtonIndex) {
+	// Select the paragraph that display error message
+	const errorMessage = document.querySelector("p");
+
+	// Remove the paragraph from DOM
+	if (errorMessage) {
+		errorMessage.remove();
+	}
+
 	// Check if the tic tac toe cell is empty
 	if (currentButton.textContent === "") {
 		// Mark the board
