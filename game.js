@@ -34,8 +34,21 @@ function makeMove(currentButton, currentButtonIndex) {
 		console.log(board);
 
 		// Check if the user won
-		// Else change the marker
-		changeMarker();
+		const winner = checkWin();
+
+		if (winner) {
+			console.log(winner + " wins.");
+			displayWinner(winner);
+
+			setTimeout(() => {
+				document.querySelector("p").textContent = "";
+				resetGame();
+			}, 3000);
+		} else if (checkDraw()) {
+			alert("it is a draw");
+		} else {
+			changeMarker();
+		}
 	} else {
 		// Create a p element to display message
 		const message = document.createElement("p");
