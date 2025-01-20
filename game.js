@@ -113,3 +113,9 @@ function displayWinner(winner) {
 
 	document.querySelector(".game-text").appendChild(winMessage);
 }
+
+// Check if it is a draw
+function checkDraw() {
+	// It is a draw when all board state are filled and there is no winner
+	return board.every((cell) => cell !== "") && !checkWin();
+}
