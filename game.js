@@ -67,3 +67,30 @@ function changeMarker() {
 		marker = "X";
 	}
 }
+
+// Check if user won
+function checkWin() {
+	let winningCombination = [
+		[0, 1, 2],
+		[0, 3, 6],
+		[0, 4, 8],
+		[1, 4, 7],
+		[2, 5, 8],
+		[2, 4, 6],
+		[3, 4, 5],
+		[6, 7, 8],
+	];
+
+	// Iterate through each winning combination
+	for (combo of winningCombination) {
+		// Destructure the element of each combo
+		const [a, b, c] = combo;
+
+		// Check if the marker at each winning position is the same with the board state
+		// If it is the same, the player with the marker wins
+		// Return the marker to display winner later
+		if (board[a] === board[b] && board[a] === board[c]) {
+			return board[a];
+		}
+	}
+}
