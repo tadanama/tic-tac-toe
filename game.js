@@ -94,3 +94,14 @@ function checkWin() {
 		}
 	}
 }
+
+// Reset the game
+function resetGame() {
+	// Set the board array to an empty string
+	board.fill("");
+
+	// Empty the buttons text
+	for (let i = 0; i < buttons.length; i++) {
+		buttons[i].textContent = "";
+	}
+}
