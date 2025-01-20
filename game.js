@@ -105,3 +105,11 @@ function resetGame() {
 		buttons[i].textContent = "";
 	}
 }
+
+// Display the winner
+function displayWinner(winner) {
+	const winMessage = document.createElement("p");
+	winMessage.textContent = winner + " wins.";
+
+	document.querySelector(".game-text").appendChild(winMessage);
+}
